@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-# ===================================================================
 # HELIOSFORGE v6.0 — FULL 5D FRACTAL D-BRANE SUN — REAL PRODUCTION MODEL
 # 822 parameters per AR | Live NOAA + NASA + DSCOVR data | Full disk
 # Every Earth-facing AR | Real-time flare reset | 3-day forecast
 # Author: Shannon Newton Nunn
 # Date: December 11, 2025
-# GitHub: https://github.com/ShaNunn1/HeliosForge
+# GitHub: https://github.com/ShaNunn183/HeliosForge
 # ===================================================================
 
 import numpy as np
@@ -14,6 +13,7 @@ import requests
 import time
 import re
 import json
+import pandas as pd  # THIS LINE WAS MISSING — FIXED NOW
 from scipy.stats import linregress
 
 # ===================================================================
@@ -163,7 +163,10 @@ def live_full_forecast():
         print("All quiet — no major threats next 3 days")
     print("-" * 80)
 
-# Run every 6 hours
-while True:
-    live_full_forecast()
-    time.sleep(21600)
+# Run once now
+live_full_forecast()
+
+# Uncomment for live loop
+# while True:
+#     live_full_forecast()
+#     time.sleep(21600)  # 6 hours
